@@ -1,4 +1,3 @@
-// server/server.js
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
@@ -10,12 +9,13 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 5000
 
-app.use(cors({
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://ecoinch.com"],
+    credentials: true,
+  })
+)
 
-  origin: "http://localhost:3000", 
-
-  
-}))
 app.use(express.json())
 
 app.use("/api/leads", leadRoutes)
