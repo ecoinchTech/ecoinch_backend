@@ -1,4 +1,4 @@
-// server/models/Lead.js
+// server/models/Lead .js
 const mongoose = require("mongoose")
 
 const leadSchema = new mongoose.Schema({
@@ -10,3 +10,5 @@ const leadSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model("Lead", leadSchema)
+
+
