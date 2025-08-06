@@ -11,12 +11,25 @@ const PORT = process.env.PORT || 5000
 
 // use both
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://ecoinch.com",
+  "https://www.ecoinch.com",
+]
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://ecoinch.com"],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true)
+      } else {
+        callback(new Error("Not allowed by CORS"))
+      }
+    },
     credentials: true,
   })
 )
+
 
 app.use(express.json())
 
