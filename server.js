@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 5000
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "http://localhost:5173",
   "https://ecoinch.com",
   "https://www.ecoinch.com",
 ]
